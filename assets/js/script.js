@@ -38,3 +38,43 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 var cday = document.querySelector("#currentDay");
 var currentdate = moment();
 cday.textContent = currentdate.format("ddd, MMMM Do");
+
+$(document).ready(function () {
+  // variable to hold the user's city input
+  var city = "";
+  // vaiable to hold the latitude and longitude of the city that was called
+  var lat = "";
+  var lon = "";
+
+  // This function calls the weather API and inputs the users values
+  function weatherGrab() {
+    var weathURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&lang=en&appid=aec299195260a001b09706b5bfe740f7";
+    $.ajax({
+      url: weathURL,
+      method: "GET"
+    }).then(function (response) {
+      
+    })
+  };
+
+  function searchButton() {
+    city = $("input").val().trim();
+
+    // Below is a function that will clear out the input field
+    $("input").val("");
+
+    weatherGrab();
+  };
+
+  // This is calling the submition of the user's input of the city name
+  $("#cityform").submit(function(event) {
+    event.preventDefault();
+    searchButton();
+  })
+
+  $("#citysubmit").submit(function(event) {
+    event.preventDefault();
+    searchButton();
+  })
+
+})
