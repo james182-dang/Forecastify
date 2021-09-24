@@ -34,3 +34,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 };
 
 
+// Created a call to moment to get the date to put at the top of the page.
+var cday = document.querySelector("#currentDay");
+var currentdate = moment();
+cday.textContent = currentdate.format("ddd, MMMM Do");
