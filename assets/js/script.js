@@ -1,5 +1,4 @@
 // DOM element
-let authUser = $("#authUser");
 // Spotify SDK connection
 window.onSpotifyWebPlaybackSDKReady = () => {
     const token = 'BQAKDRHeTKI8CGpTXel_W4PSM9hgh4I50GYseRU9BnAyWe6qrsydbhc5KOO4-odJNEXR0uIyZOGIvZNH57hn6xhHSFztSsYBLrqPeezMEob4PrnZbWbypPKALtudgRcQOM4eg-r6CPVmHCk5xN8VHRmqwTBoxS26_gremBxoGX3oWXKzm7tysBY';
@@ -36,12 +35,50 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
 };
 
+function APIController() {
 
-function authorizeUser() {
-    fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827")
-        .then (function(response) {
-            return response.json;
+    let clientID = "3157f22acedd463f8cf05d236076c33e";
+    let clientSecret = "1b6cfcf8571647edbb2667eefce03653"
+        
+        const result = fetch('https://accounts.spotify.com/api/token', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/x-www-form-urlencoded',
+                'Authorization' : 'Basic ' + btoa(clientID + ':' + clientSecret)
+            },
+            body: 'grant_type=client_credentials'
         })
+        .then (function(response) {
+            return response.json();
+        })
+        .then (function(response) {
+            fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827", {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + response.access_token
+                }
+            })
+            .then (function(response) {
+                console.log(response);
+            })
+        });
+
+        //Test code to check responses/API calls
+        //const data = result.json();
+        //console.log(data.access_token);
+        //return data.access_token;
+};
+
+// BASE function using placeholder playlist
+function getPlaylist() {
+    fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827", {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + accessToken
+        },
+    })
+
+// This code will be later built upon to append the data to the page
 
     // let dataContainer = document.getElementById("#data-container");
     // let loginForm = document.createElement("div");
@@ -55,6 +92,3 @@ function authorizeUser() {
 var cday = document.querySelector("#currentDay");
 var currentdate = moment();
 cday.textContent = currentdate.format("ddd, MMMM Do");
-
-// Event Listener
-authUser.on("click", authorizeUser);
