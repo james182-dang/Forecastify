@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css" integrity="sha512-braXHF1tCeb8MzPktmUHhrjZBSZknHvjmkUdkAbeqtIrWwCchhcpUeAf2Sq3yIq1Q1x5PlroafjceOUbIE3Q5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <!-- Local CSS Link -->
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <title>Forecastify</title>
 
 </head>
@@ -21,9 +22,23 @@
     <h3>Built/Designed By: Alex Sabel, James Lindsey, Matt Roland, Jon Stivers, Walker Phillips</h3>
 
     <h1>Spotify Web Playback SDK Quick Start</h1>
+    <button id="togglePlay">Toggle Play</button>
     <h3 id="currentDay" class="lead"></h3>
 
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <div class="spotify-container">
+        <div class="iframe-container">
+            
+        </div>
+        <img id="currentTrack" />
+        <h3 id="currentTrackName"></h3>
+
+    </div>
+
+
+
+    
+
+
     <!-- Created a call to Moment.js MR -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
