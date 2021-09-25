@@ -25,16 +25,21 @@
 
 
    <div class="grid overflow-hidden grid-lines grid-cols-4 grid-rows-8 pt-20 gap-6 w-screen h-screen">
-	<div class="box row-span-2  bg-gray-400">
+	<div class="box row-span-2  bg-gray-400 space-y-20">
         <div class="flex p-2"> Search Bar</div>
         <div class="flex"> Search input</div>
         <div class="flex bg-blue-400 pt-4">Spotify Widget</div>
     </div>
-	<div class="box row-span-2 col-start-2 col-span-3 bg-gray-200">
+	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-200">
         Current City Weather
     </div>
-	<div class="box col-start-2 col-span-3 bg-gray-100">
-        Forecast
+	<div class="grid  box col-start-2 col-span-3 bg-gray-100">
+        <div class="grid items grid-cols-4 justify-items-center box-border border-2">
+            <div class=" box-border border-2">Weather Forecast</div>
+            <div class=" box-border border-2">Weather Forecast</div>
+            <div class=" box-border border-2">Weather Forecast</div>
+            <div class=" box-border border-2">Weather Forecast</div>
+          </div>
     </div>
 </div>
 
