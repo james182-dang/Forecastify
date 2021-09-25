@@ -1,4 +1,6 @@
-// DOM element
+// DOM elements
+let elVerifyButton = document.getElementById("verifySpotify");
+
 // Spotify SDK connection
 window.onSpotifyWebPlaybackSDKReady = () => {
     const token = 'BQAKDRHeTKI8CGpTXel_W4PSM9hgh4I50GYseRU9BnAyWe6qrsydbhc5KOO4-odJNEXR0uIyZOGIvZNH57hn6xhHSFztSsYBLrqPeezMEob4PrnZbWbypPKALtudgRcQOM4eg-r6CPVmHCk5xN8VHRmqwTBoxS26_gremBxoGX3oWXKzm7tysBY';
@@ -35,6 +37,19 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
 };
 
+// Code verifier and challenge functions
+
+
+function verifySpotify() {
+
+   const result = fetch('https://accounts.spotify.com/authorize?client_id=3157f22acedd463f8cf05d236076c33e&response_type=code&redirect_uri=https://james182-dang.github.io/Forecastify/&code_challenge_method=S256&code_challenge=a63ILMPduQMeN_ZewWIlzN6VcOZeA9J1tAH7g_hNSwg', {
+       method: ''
+   })
+    
+};
+
+
+
 function APIController() {
 
     let clientID = "3157f22acedd463f8cf05d236076c33e";
@@ -52,11 +67,15 @@ function APIController() {
             return response.json();
         })
         .then (function(response) {
+            // If statements will begin here in final product
             fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827", {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + response.access_token
                 }
+            })
+            .then (function(response) {
+                return response.json();
             })
             .then (function(response) {
                 console.log(response);
@@ -87,6 +106,8 @@ function getPlaylist() {
 
     // dataContainer.appendChild(loginForm);
 };
+
+elVerifyButton.addEventListener("click", verifySpotify);
 
 // Created a call to moment to get the date to put at the top of the page.
 var cday = document.querySelector("#currentDay");
