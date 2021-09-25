@@ -46,6 +46,10 @@ $(document).ready(function () {
   var lat = "";
   var lon = "";
 
+  function weatherGrabAPI(a,b) {
+    
+  }
+
   // This function calls the weather API and inputs the users values
   function weatherGrab() {
     var weathURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&lang=en&appid=aec299195260a001b09706b5bfe740f7";
@@ -53,7 +57,17 @@ $(document).ready(function () {
       url: weathURL,
       method: "GET"
     }).then(function (response) {
-      
+      // this will grab the latitude and longitude of the city that was input
+      lat = response.coord.lat;
+      lon = response.coord.lon;
+
+      // Add the city and state to the html for the current weather section
+      $("#city").text(response.name);
+      $("#date").text(moment.unix(response.dt).format("dddd, MM/DD/YYYY"));
+
+      localStorage.setItem("cityname", response.name);
+
+      weatherGrabAPI();
     })
   };
 
