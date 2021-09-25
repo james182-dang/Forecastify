@@ -20,27 +20,23 @@
 <body>
 
    <nav>
-    <h1 class="">Forecastify</h1>
+    <h1 class="flex lg:gap-6 md:gap-2 sm:gap-2 flex-inital ">ForeCastify</h1>
    </nav>
 
 
-    <div class="grid items grid-rows-4 grid-cols-4 justify-items-start">
-        <div class=" col-span-1 box-border border-2">1
-            <div class="bg-grey">Search bar</div>
-            <div class="bg-grey">Search input</div>
-            <div class="bg-grey">Spotify widget/Placeholder</div>
-        </div>
-        <div class="grid grid-cols-3 ">
-        <div class="col-span-3 col-span-3 p-20 box-border border-2">User Input</div>
-        </div>  
+   <div class="grid overflow-hidden grid-lines grid-cols-4 grid-rows-8 pt-20 gap-6 w-screen h-screen">
+	<div class="box row-span-2  bg-gray-400">
+        <div class="flex p-2"> Search Bar</div>
+        <div class="flex"> Search input</div>
+        <div class="flex bg-blue-400 pt-4">Spotify Widget</div>
     </div>
-
-    <div class="grid items grid-cols-4 justify-items-center box-border border-2">
-        <div class="h-36 box-border border-2">Weather 1</div>
-        <div class="h-36 box-border border-2">Weather 2</div>
-        <div class="h-36 box-border border-2">Weather 3</div>
-        <div class="h-36 box-border border-2">Weather 4</div>
+	<div class="box row-span-2 col-start-2 col-span-3 bg-gray-200">
+        Current City Weather
     </div>
+	<div class="box col-start-2 col-span-3 bg-gray-100">
+        Forecast
+    </div>
+</div>
 
 
     <h2>Spotify Web Playback SDK Quick Start</h2>
