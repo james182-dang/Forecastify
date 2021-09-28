@@ -80,13 +80,13 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
 
 
-function verifySpotify() {
+// function verifySpotify() {
 
-    const result = fetch('https://accounts.spotify.com/authorize?client_id=3157f22acedd463f8cf05d236076c33e&response_type=code&redirect_uri=https://james182-dang.github.io/Forecastify/&code_challenge_method=S256&code_challenge=a63ILMPduQMeN_ZewWIlzN6VcOZeA9J1tAH7g_hNSwg', {
-       method: ''
-   })
+//     const result = fetch('https://accounts.spotify.com/authorize?client_id=3157f22acedd463f8cf05d236076c33e&response_type=code&redirect_uri=https://james182-dang.github.io/Forecastify/&code_challenge_method=S256&code_challenge=a63ILMPduQMeN_ZewWIlzN6VcOZeA9J1tAH7g_hNSwg', {
+//        method: ''
+//    })
     
-};
+// };
 
 
 
@@ -129,13 +129,13 @@ function APIController() {
 };
 
 // BASE function using placeholder playlist
-function getPlaylist() {
-    fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827", {
-        method: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + accessToken
-        },
-    })
+// function getPlaylist() {
+//     fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827", {
+//         method: 'GET',
+//         headers: {
+//             'Authorization': 'Bearer ' + accessToken
+//         },
+//     })
 
 // This code will be later built upon to append the data to the page
 
