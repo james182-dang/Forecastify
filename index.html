@@ -28,11 +28,13 @@
 
    <nav>
     <h1 class="flex lg:gap-6 md:gap-2 sm:gap-2 flex-inital ">ForeCastify</h1>
+    <h3 class="flex lg:gap-6 md:gap-2 sm:gap-2 flex-inital ">Built/Designed By: Alex Sabel, James Lindsey, Matt Roland, Jon Stivers, Walker Phillips</h3>
    </nav>
 
 
    <div class="grid overflow-hidden grid-lines grid-cols-4 grid-rows-8 pt-20 gap-6 w-screen h-screen">
 	<div class="box row-span-2  bg-gray-400 space-y-20">
+
         <div class="flex p-2"> Search Bar</div>
         <div class="flex"> Search input</div>
         <div class="flex bg-blue-400 pt-4">Spotify Widget</div>
@@ -67,38 +69,53 @@
     <div class="spotify-container">
         <div class="data-container">
 
+
+        <div class="flex p-2">
+            <!-- Texbox for User's city input -->
+            <div class="p-8">
+                <div class="bg-white flex items-center rounded-full shadow-xl" id="cityform">
+                    <input class="rounded-1-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="usercityname" type="text" placeholder="City Name">
+                    <div class="p-4">
+                        <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center" id="citysubmit">Search</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <img id="currentTrack" />
-        <h3 id="currentTrackName"></h3>
+        <div class="flex">
 
-    </div>
+        </div>
+        <div class="flex bg-blue-400 pt-4">
+            <button id="verifySpotify">Log in to Spotify</button>
+            <button id="togglePlay">Toggle Play</button>
+            <h3 id="currentDay" class="lead"></h3>
+            <div class="spotify-container">
+                <div class="data-container">Search Result</div>
+                <img id="currentTrack" />
+                <h3 id="currentTrackName"></h3>
 
-
-
-    <!-- Texbox for User's city input -->
-    <div class="p-8">
-        <div class="bg-white flex items-center rounded-full shadow-xl" id="cityform">
-            <input class="rounded-1-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="usercityname" type="text" placeholder="Search">
-            <div class="p-4">
-                <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center" id="citysubmit">Search</button>
             </div>
         </div>
     </div>
-
-    <section id="currentweather">
-        <h1 id="city"></h1>
-        <h5 id="date"></h5>
-        <p id="temp"></p>
-        <p id="humidity"></p>
-        <p id="wind"></p>
-        <p id="uv-index">UV Index: </p>
-    </section>
-
-    <section id="fiveday">
-        <h3>5-Day Forecast:</h3>
-        <div id="5fore"></div>
-    </section>
-
+	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-500">
+        <section id="currentweather">
+            <h1 id="city"></h1>
+            <h5 id="date"></h5>
+            <p id="temp"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="uv-index">UV Index: </p>
+        </section>
+    </div>
+	<div class="grid  box col-start-2 col-span-3 bg-gray-500">
+        <div class="grid items grid-cols-4 justify-items-center box-border border-2">
+            <section id="fiveday">
+                <h3>5-Day Forecast:</h3>
+                <div id="5fore"></div>
+            </section>
+          </div>
+        </div>
+    </div>
 
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
