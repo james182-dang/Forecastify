@@ -2,10 +2,9 @@
 // DOM elements
 let elVerifyButton = document.getElementById("verifySpotify");
 
-
 // Spotify SDK connection
 window.onSpotifyWebPlaybackSDKReady = () => {
-    const token = 'BQAKDRHeTKI8CGpTXel_W4PSM9hgh4I50GYseRU9BnAyWe6qrsydbhc5KOO4-odJNEXR0uIyZOGIvZNH57hn6xhHSFztSsYBLrqPeezMEob4PrnZbWbypPKALtudgRcQOM4eg-r6CPVmHCk5xN8VHRmqwTBoxS26_gremBxoGX3oWXKzm7tysBY';
+    const token = 'BQA2OGFMjgF415f8j0wRO2ER5znxG2EMRnJqbvs8sREYUqPVowjuko5i7nLFSA7hSQAbvhFYQwcgq_xZoYWfgevDox-uNOi0gVOlpcgVL8GEeWbv0_N8QhZ732kD_l94WHmtC5KW4O5PFWZXv4-FeFfmWrimWxCOEOef5rq_n3AkzYb3JV4blpw';
     const player = new Spotify.Player({
 
       name: 'Web Playback SDK Quick Start Player',
@@ -23,9 +22,10 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     console.log('Device ID has gone offline', device_id);
   });
 
- player.addListener('initialization_error', ({ message }) => { 
+
+    player.addListener('initialization_error', ({ message }) => { 
       console.error(message);
- });
+    });
 
  player.addListener('authentication_error', ({ message }) => {
     console.error(message);
@@ -37,8 +37,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
  player.connect();
 
-
- };
+};
 
 // Code verifier and challenge functions TESTING
 
@@ -170,18 +169,20 @@ $(document).ready(function () {
 
     // The actual API key to get the rest of the current weathre and 5 day forecast
     $.ajax({
-      url: queryURL2,
+      url: weathURL2,
       method: "GET"
-    }) .then(function(respons) {
+    }) .then(function(response) {
       console.log(response);
 
       // This will remove the data that was in the 5-day forecast previously
-      $("#fiveday").empty();
+      // $("#fiveday").empty();
 
       // Grabs the weather icon and adds it to the page
       var icon = response.current.weather[0].icon;
+      console.log(icon);
       var iconImg = $("<img>");
-      icon.attr("src", "https://openweathermap.org/img/wn/" + icon + "@2x.png")
+      iconImg.attr("src", "https://openweathermap.org/img/wn/" + icon + "@2x.png");
+      console.log(iconImg);
       $("#city").append(iconImg);
 
       // populates the IDs with the weather data
@@ -195,13 +196,19 @@ $(document).ready(function () {
 
       // array built to hold the daily response from the api
       var fivedayf = response.daily;
-
+      console.log(fivedayf);
       // a for loop to grab the forecast for the next 5 days
-      for (i = 1; i < daily.length - 2; i++) {
-        var ddate = moment.unix(daily[i].dt).format("dddd MM/DD/YYYY");
-        var dtemp = daily[i].temp.day;
-        var dhum = daily[i].humidity;
-        var dicon = daily[i].weather[0].icon;
+      for (i = 1; i < fivedayf.length - 2; i++) {
+        var timestamp = fivedayf[i].dt;
+        console.log(timestamp);
+        var datetime = new Date(timestamp);
+        console.log(datetime.getTime);
+        var ddate = datetime; //moment.unix(daily[i].dt).format("dddd MM/DD/YYYY");
+        var dtemp = fivedayf[i].temp.day;
+        var dhum = fivedayf[i].humidity;
+        var dicon = fivedayf[i].weather[0].icon;
+
+        console.log(ddate);
 
         // creates the elements to hold the data
         var ddiv = $("<div>");
@@ -226,7 +233,7 @@ $(document).ready(function () {
         $("#5fore").append(ddiv);
 
         // This displays the html to the user
-        $("#fiveday").css({"display":"block"});
+        $("#fiveday").css(" box-border border-2");
       }
     })
   };
@@ -248,7 +255,7 @@ $(document).ready(function () {
 
       localStorage.setItem("cityname", response.name);
 
-      weatherGrabAPI();
+      weatherGrabAPI(lat,lon);
     });
   };
 
