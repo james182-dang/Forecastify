@@ -14,6 +14,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Forecastify</title>
+    <!-- Adding a tab icon for style -->
+    <link rel="shortcut icon" href="./Images/weather.ico">
 
 </head>
 
@@ -43,13 +45,27 @@
 
     <!-- Texbox for User's city input -->
     <div class="p-8">
-        <div class="bg-white flex items-center rounded-full shadow-xl">
+        <div class="bg-white flex items-center rounded-full shadow-xl" id="cityform">
             <input class="rounded-1-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="usercityname" type="text" placeholder="Search">
             <div class="p-4">
-                <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">Search</button>
+                <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center" id="citysubmit">Search</button>
             </div>
         </div>
     </div>
+
+    <section id="currentweather">
+        <h1 id="city"></h1>
+        <h5 id="date"></h5>
+        <p id="temp"></p>
+        <p id="humidity"></p>
+        <p id="wind"></p>
+        <p id="uv-index">UV Index: </p>
+    </section>
+
+    <section id="fiveday">
+        <h3>5-Day Forecast:</h3>
+        <div id="5fore"></div>
+    </section>
 
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
