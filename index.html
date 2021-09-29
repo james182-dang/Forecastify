@@ -34,13 +34,23 @@
 
    <div class="grid overflow-hidden grid-lines grid-cols-4 grid-rows-8 pt-20 gap-6 w-screen h-screen">
 	<div class="box row-span-2  bg-gray-400 space-y-20">
-<<<<<<< HEAD
-=======
-
->>>>>>> 08a01cfbc95062f29fdb12b53f4914f6cd8f73ec
         <div class="flex p-2"> Search Bar</div>
         <div class="flex"> Search input</div>
-        <div class="flex bg-blue-400 pt-4">Spotify Widget</div>
+        <div class="flex bg-blue-400 pt-4">Spotify Widget
+            <div class="flex bg-blue-400 pt-4">
+                <button id="verifySpotify">Log in to Spotify</button>
+                <button id="togglePlay">Toggle Play</button>
+                <h3 id="currentDay" class="lead"></h3>
+                <div class="spotify-container">
+                    <div id="spotify-main-container">
+
+                    </div>
+                    <img id="currentTrack" />
+                    <h3 id="currentTrackName"></h3>
+    
+                </div>
+            </div>
+        </div>
     </div>
 	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-200">
         Current City Weather

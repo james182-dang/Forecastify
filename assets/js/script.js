@@ -99,7 +99,9 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     
 // };
 
-
+function getPlaylist() {
+    
+}
 
 function APIController() {
 
@@ -133,30 +135,7 @@ function APIController() {
             })
         });
 
-        //Test code to check responses/API calls
-        //const data = result.json();
-        //console.log(data.access_token);
-        //return data.access_token;
 };
-
-// BASE function using placeholder playlist
-// function getPlaylist() {
-//     fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827", {
-//         method: 'GET',
-//         headers: {
-//             'Authorization': 'Bearer ' + accessToken
-//         },
-//     })
-
-// This code will be later built upon to append the data to the page
-
-    // let dataContainer = document.getElementById("#data-container");
-    // let loginForm = document.createElement("div");
-
-    // loginForm.innerHTML = 
-
-    // dataContainer.appendChild(loginForm);
-  //};
 
 elVerifyButton.addEventListener("click", verifySpotify);
 
@@ -244,6 +223,38 @@ $(document).ready(function () {
         // This displays the html to the user
         $("#fiveday").css(" box-border border-2");
       }
+    // Spotify authorization  
+    }) .then (function(response) {
+        // let clientID = "3157f22acedd463f8cf05d236076c33e";
+        // let clientSecret = "1b6cfcf8571647edbb2667eefce03653";
+            
+        //     const result = fetch('https://accounts.spotify.com/api/token', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type' : 'application/x-www-form-urlencoded',
+        //             'Authorization' : 'Basic ' + btoa(clientID + ':' + clientSecret)
+        //         },
+        //         body: 'grant_type=client_credentials'
+        //     })
+
+        let spotifyMainContainer = $("#spotify-main-container");
+        let iFrameDiv = $("<div>");
+
+        if (response.current.weather[0].main = "Clouds") {
+            iFrameDiv;
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1Ers2ZxZT2WTcOwIxEWUnb" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            spotifyMainContainer.append(iFrameDiv);
+        } else if (response.current.weather[0].main = "Clear") {
+            iFrameDiv;
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1e82JSBwrnZF8TODtUcHeR" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            spotifyMainContainer.append(iFrameDiv);
+        } else if (response.current.weather[0].main = "Thunderstorm") {
+            iFrameDiv;
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/43E16ip1D8xU9Ij8Fqj698" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            spotifyMainContainer.append(iFrameDiv);
+        } else {
+            console.log("Weather has stopped existing.")
+        };
     })
   };
 
