@@ -99,7 +99,9 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     
 // };
 
-
+function getPlaylist() {
+    
+}
 
 function APIController() {
 
@@ -133,30 +135,7 @@ function APIController() {
             })
         });
 
-        //Test code to check responses/API calls
-        //const data = result.json();
-        //console.log(data.access_token);
-        //return data.access_token;
 };
-
-// BASE function using placeholder playlist
-// function getPlaylist() {
-//     fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827", {
-//         method: 'GET',
-//         headers: {
-//             'Authorization': 'Bearer ' + accessToken
-//         },
-//     })
-
-// This code will be later built upon to append the data to the page
-
-    // let dataContainer = document.getElementById("#data-container");
-    // let loginForm = document.createElement("div");
-
-    // loginForm.innerHTML = 
-
-    // dataContainer.appendChild(loginForm);
-  //};
 
 elVerifyButton.addEventListener("click", verifySpotify);
 
@@ -202,6 +181,128 @@ $(document).ready(function () {
 
       // This dispalys the html to the user
       $("currentweather").css({"display":"block"});
+
+      // array built to hold the daily response from the api
+      var fivedayf = response.daily;
+      console.log(fivedayf);
+      // a for loop to grab the forecast for the next 5 days
+      for (i = 1; i < fivedayf.length - 2; i++) {
+        var timestamp = fivedayf[i].dt;
+        console.log(timestamp);
+        var datetime = new Date(timestamp);
+        console.log(datetime.getTime);
+        var ddate = datetime; //moment.unix(daily[i].dt).format("dddd MM/DD/YYYY");
+        var dtemp = fivedayf[i].temp.day;
+        var dhum = fivedayf[i].humidity;
+        var dicon = fivedayf[i].weather[0].icon;
+
+        console.log(ddate);
+
+        // creates the elements to hold the data
+        var ddiv = $("<div>");
+        var ptemp = $("<p>");
+        var phum = $("<p>");
+        var imgicon = $("<img>");
+        var hdate = $("<h6>");
+
+
+        // adds the text to the elements made above
+        hdate.text(ddate);
+        imgicon.attr("src", "https://openweathermap.org/img/wn/" + dicon + "@2x.png");
+        imgicon.css({"width": "100%"});
+        ptemp.text("Temp: " + dtemp + "° F");
+        phum.text("Humidity: " + dhum + "%");
+
+        // This appends the elements made above to the html
+        ddiv.append(hdate);
+        ddiv.append(imgicon);
+        ddiv.append(ptemp);
+        ddiv.append(phum);
+        $("#5fore").append(ddiv);
+
+        // This displays the html to the user
+        $("#fiveday").css(" box-border border-2");
+
+        // Target, div creation for iframe
+        let spotifyMainContainer = $("#spotify-main-container");
+        let iFrameDiv = $("<div>");
+
+        // Clouds
+        if (response.current.weather[0].main == "Clouds") {
+            iFrameDiv;
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1Ers2ZxZT2WTcOwIxEWUnb" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            spotifyMainContainer.append(iFrameDiv);
+
+        // Clear
+        } else if (response.current.weather[0].main = "Clear") {
+            iFrameDiv;
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1e82JSBwrnZF8TODtUcHeR" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            spotifyMainContainer.append(iFrameDiv);
+
+        // Thunderstorm
+        } else if (response.current.weather[0].main = "Thunderstorm") {
+            iFrameDiv;
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/43E16ip1D8xU9Ij8Fqj698" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            spotifyMainContainer.append(iFrameDiv);
+        
+        // Drizzle
+        } else if (response.current.weather[0].main = "Drizzle") {
+            iFrameDiv;
+            iFrameDiv.innerHTML = ''
+            spotifyMainContainer.append(iFrameDiv);
+
+        // No weather at all?
+        } else {
+            console.log("Weather has stopped existing. Please make sure you are still connected to the third dimension.")
+        };
+      }
+    // Spotify playlist connections 
+
+                  
+        // let clientID = "3157f22acedd463f8cf05d236076c33e";
+        // let clientSecret = "1b6cfcf8571647edbb2667eefce03653";
+            
+        //     const result = fetch('https://accounts.spotify.com/api/token', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type' : 'application/x-www-form-urlencoded',
+        //             'Authorization' : 'Basic ' + btoa(clientID + ':' + clientSecret)
+        //         },
+        //         body: 'grant_type=client_credentials'
+        //     })
+
+        // Target, div creation for iframe
+        // let spotifyMainContainer = $("#spotify-main-container");
+        // let iFrameDiv = $("<div>");
+
+        // Clouds
+        // if (response.current.weather[0].main == "Clouds") {
+        //     iFrameDiv;
+        //     iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1Ers2ZxZT2WTcOwIxEWUnb" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+        //     spotifyMainContainer.append(iFrameDiv);
+
+        // Clear
+        // } else if (response.current.weather[0].main = "Clear") {
+        //     iFrameDiv;
+        //     iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1e82JSBwrnZF8TODtUcHeR" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+        //     spotifyMainContainer.append(iFrameDiv);
+
+        // Thunderstorm
+        // } else if (response.current.weather[0].main = "Thunderstorm") {
+        //     iFrameDiv;
+        //     iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/43E16ip1D8xU9Ij8Fqj698" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+        //     spotifyMainContainer.append(iFrameDiv);
+        
+        // Drizzle
+        // } else if (response.current.weather[0].main = "Drizzle") {
+        //     iFrameDiv;
+        //     iFrameDiv.innerHTML = ''
+        //     spotifyMainContainer.append(iFrameDiv);
+
+        // No weather at all?
+        // } else {
+        //     console.log("Weather has stopped existing. Please make sure you are still connected to the third dimension.")
+        // };
 
       // // array built to hold the daily response from the api
       // var fivedayf = response.daily;
