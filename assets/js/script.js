@@ -99,10 +99,6 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     
 // };
 
-function getPlaylist() {
-    
-}
-
 function APIController() {
 
     let clientID = "3157f22acedd463f8cf05d236076c33e";
@@ -225,24 +221,24 @@ $(document).ready(function () {
 
         // Target, div creation for iframe
         let spotifyMainContainer = $("#spotify-main-container");
-        let iFrameDiv = $("<div>");
+        let iFrameDiv = document.createElement("div");
 
         // Clouds
         if (response.current.weather[0].main == "Clouds") {
             iFrameDiv;
-            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1Ers2ZxZT2WTcOwIxEWUnb" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1Ers2ZxZT2WTcOwIxEWUnb" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
             spotifyMainContainer.append(iFrameDiv);
 
         // Clear
         } else if (response.current.weather[0].main = "Clear") {
             iFrameDiv;
-            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1e82JSBwrnZF8TODtUcHeR" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1e82JSBwrnZF8TODtUcHeR" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
             spotifyMainContainer.append(iFrameDiv);
 
         // Thunderstorm
         } else if (response.current.weather[0].main = "Thunderstorm") {
             iFrameDiv;
-            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/43E16ip1D8xU9Ij8Fqj698" width="50%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/43E16ip1D8xU9Ij8Fqj698" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
             spotifyMainContainer.append(iFrameDiv);
         
         // Drizzle
