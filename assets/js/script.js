@@ -203,47 +203,47 @@ $(document).ready(function () {
       // This dispalys the html to the user
       $("currentweather").css({"display":"block"});
 
-      // array built to hold the daily response from the api
-      var fivedayf = response.daily;
-      console.log(fivedayf);
-      // a for loop to grab the forecast for the next 5 days
-      for (i = 1; i < fivedayf.length - 2; i++) {
-        var timestamp = fivedayf[i].dt;
-        console.log(timestamp);
-        var datetime = new Date(timestamp);
-        console.log(datetime.getTime);
-        var ddate = datetime; //moment.unix(daily[i].dt).format("dddd MM/DD/YYYY");
-        var dtemp = fivedayf[i].temp.day;
-        var dhum = fivedayf[i].humidity;
-        var dicon = fivedayf[i].weather[0].icon;
+      // // array built to hold the daily response from the api
+      // var fivedayf = response.daily;
+      // console.log(fivedayf);
+      // // a for loop to grab the forecast for the next 5 days
+      // for (i = 1; i < fivedayf.length - 2; i++) {
+      //   var timestamp = fivedayf[i].dt;
+      //   console.log(timestamp);
+      //   var datetime = new Date(timestamp);
+      //   console.log(datetime.getTime);
+      //   var ddate = moment.unix(daily[i].dt).format("dddd MM/DD/YYYY");
+      //   var dtemp = fivedayf[i].temp.day;
+      //   var dhum = fivedayf[i].humidity;
+      //   var dicon = fivedayf[i].weather[0].icon;
 
-        console.log(ddate);
+      //   console.log(ddate);
 
-        // creates the elements to hold the data
-        var ddiv = $("<div>");
-        var ptemp = $("<p>");
-        var phum = $("<p>");
-        var imgicon = $("<img>");
-        var hdate = $("<h6>");
+      //   // creates the elements to hold the data
+      //   var ddiv = $("<div>");
+      //   var ptemp = $("<p>");
+      //   var phum = $("<p>");
+      //   var imgicon = $("<img>");
+      //   var hdate = $("<h6>");
 
 
-        // adds the text to the elements made above
-        hdate.text(ddate);
-        imgicon.attr("src", "https://openweathermap.org/img/wn/" + dicon + "@2x.png");
-        imgicon.css({"width": "100%"});
-        ptemp.text("Temp: " + dtemp + "° F");
-        phum.text("Humidity: " + dhum + "%");
+      //   // adds the text to the elements made above
+      //   hdate.text(ddate);
+      //   imgicon.attr("src", "https://openweathermap.org/img/wn/" + dicon + "@2x.png");
+      //   imgicon.css({"width": "100%"});
+      //   ptemp.text("Temp: " + dtemp + "° F");
+      //   phum.text("Humidity: " + dhum + "%");
 
-        // This appends the elements made above to the html
-        ddiv.append(hdate);
-        ddiv.append(imgicon);
-        ddiv.append(ptemp);
-        ddiv.append(phum);
-        $("#5fore").append(ddiv);
+      //   // This appends the elements made above to the html
+      //   ddiv.append(hdate);
+      //   ddiv.append(imgicon);
+      //   ddiv.append(ptemp);
+      //   ddiv.append(phum);
+      //   $("#5fore").append(ddiv);
 
-        // This displays the html to the user
-        $("#fiveday").css(" box-border border-2");
-      }
+      //   // This displays the html to the user
+      //   $("#fiveday").css(" box-border border-2");
+      // }
     })
   };
 
