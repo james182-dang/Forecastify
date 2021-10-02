@@ -244,6 +244,6 @@ $(document).ready(function () {
 
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('authenticateSpotifyComplete', function() {
   APIController();
 });
