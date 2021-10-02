@@ -1,55 +1,3 @@
-// DOM elements
-let elVerifyButton = document.getElementById("verifySpotify");
-
-// Spotify SDK connection
-window.onSpotifyWebPlaybackSDKReady = () => {
-    const token = 'BQA2OGFMjgF415f8j0wRO2ER5znxG2EMRnJqbvs8sREYUqPVowjuko5i7nLFSA7hSQAbvhFYQwcgq_xZoYWfgevDox-uNOi0gVOlpcgVL8GEeWbv0_N8QhZ732kD_l94WHmtC5KW4O5PFWZXv4-FeFfmWrimWxCOEOef5rq_n3AkzYb3JV4blpw';
-    const player = new Spotify.Player({
-
-      name: 'Web Playback SDK Quick Start Player',
-    getOAuthToken: cb => { cb(token); },
-       volume: 0.5
-   })
-    
- // Ready
-
-    player.addListener('ready', ({ device_id }) => {
-        console.log('Ready with Device ID', device_id);
-    });
-
- // Not Ready
-    player.addListener('not_ready', ({ device_id }) => {
-        console.log('Device ID has gone offline', device_id);
-    });
-
-  player.addListener('ready', ({ device_id }) => {
-    console.log('Ready with Device ID', device_id);
-   });
-
- // Not Ready
-   player.addListener('not_ready', ({ device_id }) => {
-    console.log('Device ID has gone offline', device_id);
-  });
-
-
-    player.addListener('initialization_error', ({ message }) => { 
-      console.error(message);
-    });
-
-    player.addListener('authentication_error', ({ message }) => {
-        console.error(message);
-    });
-
- player.addListener('account_error', ({ message }) => {
-    console.error(message);
- });
-
- player.connect();
-
-};
-
-
-
 // Function to authenticate Spotify on load, returns playlist data as check
 function APIController() {
 
@@ -68,7 +16,7 @@ function APIController() {
             return response.json();
         })
         .then (function(response) {
-            // If statements will begin here in final product
+          // Test playlist to verify authentication
             fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4OzrY981I1W?si=2b5b1a4f59db4827", {
                 method: 'GET',
                 headers: {
