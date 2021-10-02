@@ -99,6 +99,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     
 // };
 
+// Function to authenticate Spotify on load, returns playlist data as check
 function APIController() {
 
     let clientID = "3157f22acedd463f8cf05d236076c33e";
@@ -228,7 +229,6 @@ $(document).ready(function () {
         let iFrameDiv = document.createElement("div");
 
         spotifyMainContainer.innerHTML = "";
-
         // Clouds
         if (response.current.weather[0].main == "Clouds") {
             iFrameDiv;

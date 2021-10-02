@@ -34,43 +34,6 @@
 
    <div class="grid overflow-hidden grid-lines grid-cols-4 grid-rows-8 pt-20 gap-6 w-screen h-screen">
 	<div class="box row-span-2  bg-gray-400 space-y-20">
-        <div class="flex p-2"> Search Bar</div>
-        <div class="flex"> Search input</div>
-        <div class="flex bg-blue-400 pt-4" id="spotify-main-container">
-
-        </div>
-    </div>
-	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-200">
-        Current City Weather
-    </div>
-	<div class="grid  box col-start-2 col-span-3 bg-gray-100">
-        <div class="grid items grid-cols-4 justify-items-center box-border border-2">
-            <div class=" box-border border-2">Weather Forecast</div>
-            <div class=" box-border border-2">Weather Forecast</div>
-            <div class=" box-border border-2">Weather Forecast</div>
-            <div class=" box-border border-2">Weather Forecast</div>
-          </div>
-    </div>
-</div>
-
-
-    <h2>Spotify Web Playback SDK Quick Start</h2>
-
-   
-    <h1>Forecastify</h1>
-    <h3>Built/Designed By: Alex Sabel, James Lindsey, Matt Roland, Jon Stivers, Walker Phillips</h3>
-
-    <h1>Spotify Web Playback SDK Quick Start</h1>
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    <button id="verifySpotify">Log in to Spotify</button>
-    <button id="togglePlay">Toggle Play</button>
-    <h3 id="currentDay" class="lead"></h3>
-
-
-    <div class="spotify-container">
-        <div class="data-container">
-
-
         <div class="flex p-2">
             <!-- Texbox for User's city input -->
             <div class="p-8">
@@ -83,43 +46,23 @@
             </div>
 
         </div>
-        <div class="flex">
+        <div class="flex bg-blue-400 pt-4" id="spotify-main-container">
 
         </div>
-        <div class="flex bg-blue-400 pt-4">
-            <button id="verifySpotify">Log in to Spotify</button>
-            <button id="togglePlay">Toggle Play</button>
-            <h3 id="currentDay" class="lead"></h3>
-            <div class="spotify-container">
-                <div class="data-container">Search Result</div>
-                <img id="currentTrack" />
-                <h3 id="currentTrackName"></h3>
-
-            </div>
-        </div>
     </div>
-	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-500">
-        <section id="currentweather">
-            <h1 id="city"></h1>
-            <h5 id="date"></h5>
-            <p id="temp"></p>
-            <p id="humidity"></p>
-            <p id="wind"></p>
-            <p id="uv-index">UV Index: </p>
-        </section>
+	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-200">
+        <div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-500">
+            <section id="currentweather">
+                <h1 id="city"></h1>
+                <h5 id="date"></h5>
+                <p id="temp"></p>
+                <p id="humidity"></p>
+                <p id="wind"></p>
+                <p id="uv-index">UV Index: </p>
+            </section>
+        </div>   
     </div>
-
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-
-    <!-- Texbox for User's city input -->
-    <div class="p-8">
-        <div class="bg-white flex items-center rounded-full shadow-xl">
-            <input class="rounded-1-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="usercityname" type="text" placeholder="Search">
-            <div class="p-4">
-                <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">Search</button>
-            </div>
-        </div>
-    </div>
+</div>
 
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <!-- Created a call to Moment.js MR -->
