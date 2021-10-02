@@ -146,6 +146,9 @@ $(document).ready(function () {
   // vaiable to hold the latitude and longitude of the city that was called
   var lat = "";
   var lon = "";
+  
+  //
+  $("#spotify-main-container").innerHTML = "";
 
   // This is another call to the API to retrieve the rest of the current weather and daily weather
   function weatherGrabAPI(a,b) {
@@ -223,6 +226,8 @@ $(document).ready(function () {
         // Target, div creation for iframe
         let spotifyMainContainer = $("#spotify-main-container");
         let iFrameDiv = document.createElement("div");
+
+        spotifyMainContainer.innerHTML = "";
 
         // Clouds
         if (response.current.weather[0].main == "Clouds") {
