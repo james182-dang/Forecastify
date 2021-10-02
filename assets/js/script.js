@@ -175,7 +175,7 @@ $(document).ready(function () {
       $("#temp").text("Temperature: " + response.current.temp + "° F");
       $("#humidity").text("Humidity: " + response.current.humidity + "%");
       $("#wind").text("Wind Speed: " + response.current.wind_speed + " MPH");
-      $("#uv-index").text(response.current.uvi);
+      $("#uv-index").text("UV Index: " + response.current.uvi);
 
       // This dispalys the html to the user
       $("currentweather").css({"display":"block"});
@@ -226,7 +226,8 @@ $(document).ready(function () {
         let spotifyMainContainer = $("#spotify-main-container");
         let iFrameDiv = document.createElement("div");
 
-        spotifyMainContainer.innerHTML = "";
+        $("#spotify-main-container").empty();
+
         // Clouds
         if (response.current.weather[0].main == "Clouds") {
             iFrameDiv;
