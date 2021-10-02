@@ -134,12 +134,10 @@ function APIController() {
 
 };
 
-elVerifyButton.addEventListener("click", verifySpotify);
-
 // Created a call to moment to get the date to put at the top of the page.
 var cday = document.querySelector("#currentDay");
 var currentdate = moment();
-cday.textContent = currentdate.format("ddd, MMMM Do");
+// cday.textContent = currentdate.format("ddd, MMMM Do");
 
 $(document).ready(function () {
   // variable to hold the user's city input
@@ -391,4 +389,8 @@ $(document).ready(function () {
     searchButton();
   });
 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  APIController();
 });
