@@ -84,30 +84,42 @@ $(document).ready(function () {
         let iFrameDiv = document.createElement("div");
 
         $("#spotify-main-container").empty();
+        document.body.style.backgroundImage = "";
 
         // Clouds
         if (response.current.weather[0].main == "Clouds") {
             iFrameDiv;
             iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1Ers2ZxZT2WTcOwIxEWUnb" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
             spotifyMainContainer.append(iFrameDiv);
+            document.body.style.backgroundImage = "url(./Images/eberhard-grossgasteiger-pgTu7tevuro-unsplash.jpg";
 
         // Clear
         } else if (response.current.weather[0].main = "Clear") {
             iFrameDiv;
             iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1e82JSBwrnZF8TODtUcHeR" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
             spotifyMainContainer.append(iFrameDiv);
+            document.body.style.backgroundImage = "url(./Images/mosi-knife--PVgDgKXgZA-unsplash.jpg";
 
         // Thunderstorm
         } else if (response.current.weather[0].main = "Thunderstorm") {
             iFrameDiv;
             iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/43E16ip1D8xU9Ij8Fqj698" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
             spotifyMainContainer.append(iFrameDiv);
+            document.body.style.backgroundImage = "url(./Images/johannes-plenio-ESL1rIs9j48-unsplash.jpg";
         
         // Drizzle
         } else if (response.current.weather[0].main = "Drizzle") {
             iFrameDiv;
-            iFrameDiv.innerHTML = ''
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/64ldyxYYVgdIxvuuTabYfX" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
             spotifyMainContainer.append(iFrameDiv);
+            document.body.style.backgroundImage = "url(./Images/ed-leszczynskl-R3ofE-8DyLk-unsplash.jpg)";
+        
+        // Rain
+        } else if (response.current.weather[0].main = "Rain") {
+            iFrameDiv;
+            iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1VOREp7qG3Jen3Mpgdus41" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+            spotifyMainContainer.append(iFrameDiv);
+            document.body.style.backgroundImage = "url(./Images/josh-wilburne-6qtdLAQXmgs-unsplash.jpg";
 
         // No weather at all?
         } else {
