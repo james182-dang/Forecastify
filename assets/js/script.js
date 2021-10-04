@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
- //window.onSpotifyWebPlaybackSDKReady = () => {
-     //const token = 'BQB-hlKahpdBd55qlh2we6bimzSTa299qoQPKp2YK0gUN7jlPuyFryXtDQA5zqTxzffgN_KyXbjFy4Mom7YbWfJpGtMKd16LfdW-LzWfNwmsQjzyeiXTGAyDcQvjnCcGMtXJwCnTMou7vUg36EPbdY46b8eEEedAsSODB--gW7goJHRyb3aaUrk';
-   //const player = new Spotify.Player({
-
-=======
->>>>>>> c0aa4385d5a013326bf8165ccda3fadee3fb221e
 // DOM elements
 let elVerifyButton = document.getElementById("verifySpotify");
 
@@ -19,9 +11,6 @@ window.onSpotifyWebPlaybackSDKReady = () => {
        volume: 0.5
    })
     
-<<<<<<< HEAD
- //Ready
-=======
  // Ready
 
     player.addListener('ready', ({ device_id }) => {
@@ -33,16 +22,11 @@ window.onSpotifyWebPlaybackSDKReady = () => {
         console.log('Device ID has gone offline', device_id);
     });
 
->>>>>>> c0aa4385d5a013326bf8165ccda3fadee3fb221e
   player.addListener('ready', ({ device_id }) => {
     console.log('Ready with Device ID', device_id);
    });
 
-<<<<<<< HEAD
-// Not Ready
-=======
  // Not Ready
->>>>>>> c0aa4385d5a013326bf8165ccda3fadee3fb221e
    player.addListener('not_ready', ({ device_id }) => {
     console.log('Device ID has gone offline', device_id);
   });

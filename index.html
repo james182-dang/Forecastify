@@ -22,14 +22,14 @@
 
 
    <nav>
-    <h1 class="flex lg:gap-6 md:gap-2 sm:gap-2 flex-inital ">ForeCastify</h1>
-    <h3 class="flex lg:gap-6 md:gap-2 sm:gap-2 flex-inital ">Built/Designed By: Alex Sabel, James Lindsey, Matt Roland, Jon Stivers, Walker Phillips</h3>
+    <h1 class=" flex justify-center items-center ">ForeCastify</h1>
+   
    </nav>
 
 <div class="flex pt-4">
-            <button id="verifySpotify"></button>
+            <button class="color: grey-50" id="verifySpotify"></button>
             <button id="togglePlay"></button>
-            <h3 id="currentDay" class="lead"></h3>
+            
             <div class="spotify-container">
                 <div class="data-container"></div>
                 <img id="currentTrack" />
@@ -41,21 +41,21 @@
                 <div class="bg-white flex items-center rounded-full shadow-xl" id="cityform">
                     <input class="rounded-1-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="usercityname" type="text" placeholder="City Name">
                     <div class="p-4">
-                        <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center" id="citysubmit">Search</button>
+                        <button class="bg-gray-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center" id="citysubmit">Search</button>
                     </div>
                 </div>
         </div>
-   <div class="grid overflow-hidden grid-lines grid-cols-4 grid-rows-8 pt-20 gap-6 w-screen h-screen">
-	<div class="box row-span-2  bg-gray-400 space-y-20">
+   <div class="grid overflow-hidden grid-lines grid-cols-2 grid-rows-1 ">
+	<div class="box row-span-2  space-y-5">
     
         <div class="flex"> </div>
-        <div class="flex pt-4" id="spotify-main-container">
+        <div class=" flex flex-col items-center justify-center" id="spotify-main-container">
 
         </div>
     </div>
-	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-200">
-        Current City Weather
-         <section id="currentweather">
+	<div class="object-center bg-gray-100">
+   
+         <section class="  flex flex-col items-center justify-center " id="currentweather">
             <h1 id="city"></h1>
             <h5 id="date"></h5>
             <p id="temp"></p>
@@ -67,7 +67,7 @@
 	
 </div>   
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    <h3 id="currentDay" class="lead"></h3>
+    <h3 class="flex justify-center items-center" id="currentDay" class="lead"></h3>
     <div class="spotify-container">
         <div class="data-container">
         <div class="flex p-2">
@@ -81,9 +81,10 @@
         
     </div>
 	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-500">
+   
        
     </div>
-
+ <h3 class="flex justify-center items-center ">Built/Designed By: Alex Sabel, James Lindsey, Matt Roland, Jon Stivers, Walker Phillips</h3>
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
   
