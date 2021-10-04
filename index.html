@@ -18,90 +18,77 @@
     <link rel="shortcut icon" href="./Images/weather.ico">
 
 </head>
-
-
-
-
-
-<body class="gray-50">
+<body>
 
 
    <nav>
-    <h1 class="flex lg:gap-6 md:gap-2 sm:gap-2 flex-inital text-white">ForeCastify</h1>
-  
-    <div class=" col-start-2 col-span-3 bg-gray-100 shadow-lg bg-gray-200 rounded-lg h-18">
-    <div class="grid items grid-cols-4 justify-items-center box-border border-2 rounded-lg h-18">
-             <div class=" box-border border-2 shadow-lg bg-white rounded-lg h-18">Weather Forecast</div>
-            <div class=" box-border border-2 shadow-lg bg-white rounded-lg h-18">Weather Forecast</div>
-            <div class=" box-border border-2 shadow-lg bg-white rounded-lg h-18">Weather Forecast</div>
-            <div class=" box-border border-2 shadow-lg bg-white rounded-lg h-18">Weather Forecast</div>
-    </div>
-    </div>
-        
-    </nav>
+    <h1 class="flex lg:gap-6 md:gap-2 sm:gap-2 flex-inital ">ForeCastify</h1>
+    <h3 class="flex lg:gap-6 md:gap-2 sm:gap-2 flex-inital ">Built/Designed By: Alex Sabel, James Lindsey, Matt Roland, Jon Stivers, Walker Phillips</h3>
+   </nav>
 
+<div class="flex pt-4">
+            <button id="verifySpotify"></button>
+            <button id="togglePlay"></button>
+            <h3 id="currentDay" class="lead"></h3>
+            <div class="spotify-container">
+                <div class="data-container"></div>
+                <img id="currentTrack" />
+                <h3 id="currentTrackName"></h3>
 
-   <div class="grid overflow-hidden grid-lines grid-cols-4 grid-rows-8 pt-20 gap-6 w-screen h-screen ">
-	<div class="box row-span-2  bg-green-600 space-y-20 shadow-lg bg-white rounded-lg h-18">
-        <div class="flex p-2 shadow-lg bg-white rounded-lg h-18"> Search Bar</div>
-        <div class="flex shadow-lg bg-white rounded-lg h-18"> Search input</div>
-        <iframe class="flex row-span-2 rounded-lg shadow-2xl" src="https://open.spotify.com/embed/album/340MjPcVdiQRnMigrPybZA" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        <div class="flex bg-blue-400 pt-4 shadow-lg bg-white rounded-lg h-18">Spotify Widget</div>
-    </div>
-	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 rounded-lg bg-green-600">
-        Current City Weather
-</div>
-
-
-    <h2>Spotify Web Playback SDK Quick Start</h2>
-
-   >
-    <h3 class="text-white">Built/Designed By: Alex Sabel, James Lindsey, Matt Roland, Jon Stivers, Walker Phillips</h3>
-
-    <h1 class="text-white">Spotify Web Playback SDK Quick Start</h1>
-    <button id="verifySpotify">Log in to Spotify</button>
-    <button id="togglePlay">Toggle Play</button>
-    <h3 id="currentDay" class="lead"></h3>
-
-
-    <div class="spotify-container">
-        <div class="data-container">
-
-        </div>
-        <img id="currentTrack" />
-        <h3 id="currentTrackName"></h3>
-
-    </div>
-
-
-
-    <!-- Texbox for User's city input -->
-    <div class="p-8">
-        <div class="bg-white flex items-center rounded-full shadow-xl" id="cityform">
-            <input class="rounded-1-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none rounded-full" id="usercityname" type="text" placeholder="Search">
-            <div class="p-4">
-                <button class="bg-green-600 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center" id="citysubmit">Search</button>
             </div>
         </div>
+        <div class="p-8">
+                <div class="bg-white flex items-center rounded-full shadow-xl" id="cityform">
+                    <input class="rounded-1-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="usercityname" type="text" placeholder="City Name">
+                    <div class="p-4">
+                        <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center" id="citysubmit">Search</button>
+                    </div>
+                </div>
+        </div>
+   <div class="grid overflow-hidden grid-lines grid-cols-4 grid-rows-8 pt-20 gap-6 w-screen h-screen">
+	<div class="box row-span-2  bg-gray-400 space-y-20">
+    
+        <div class="flex"> </div>
+        <div class="flex pt-4" id="spotify-main-container">
+
+        </div>
     </div>
+	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-200">
+        Current City Weather
+         <section id="currentweather">
+            <h1 id="city"></h1>
+            <h5 id="date"></h5>
+            <p id="temp"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="uv-index"></p>
+        </section>
+    </div>
+	
+</div>   
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <h3 id="currentDay" class="lead"></h3>
+    <div class="spotify-container">
+        <div class="data-container">
+        <div class="flex p-2">
+            <!-- Texbox for User's city input -->
+            
 
-    <section id="currentweather">
-        <h1 id="city"></h1>
-        <h5 id="date"></h5>
-        <p id="temp"></p>
-        <p id="humidity"></p>
-        <p id="wind"></p>
-        <p id="uv-index">UV Index: </p>
-    </section>
+        </div>
+        <div class="flex">
 
-    <section id="fiveday">
-        <h3>5-Day Forecast:</h3>
-        <div id="5fore"></div>
-    </section>
-
+        </div>
+        
+    </div>
+	<div class="flex flex-wrap box row-span-2 col-start-2 col-span-3 bg-gray-500">
+       
+    </div>
 
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
+  
+
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <!-- Created a call to Moment.js MR -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
@@ -109,12 +96,6 @@
 
 
 </body>
-
-
 </html>
-
-
-
-
 
 
