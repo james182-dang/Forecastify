@@ -1,6 +1,8 @@
 # Forecastify
 Forecastify is a music and weather application.
 
+By Alex Sabel, Matt Roland, Walker Phillips, Jon Stivers, and James Lindsey.
+
 https://james182-dang.github.io/Forecastify/
 
 Can't decide the music to match the mood?
