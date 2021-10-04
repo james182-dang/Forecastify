@@ -78,7 +78,7 @@ $(document).ready(function () {
 
       // This dispalys the html to the user
       $("currentweather").css({"display":"block"});
-      
+
         // Target, div creation for iframe
         let spotifyMainContainer = $("#spotify-main-container");
         let iFrameDiv = document.createElement("div");
@@ -162,3 +162,5 @@ $(document).ready(function () {
 document.addEventListener('authenticateSpotifyComplete', function() {
   APIController();
 });
+
+window.onload = APIController();
