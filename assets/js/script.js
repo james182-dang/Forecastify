@@ -119,7 +119,7 @@ $(document).ready(function () {
             iFrameDiv;
             iFrameDiv.innerHTML = '<iframe src="https://open.spotify.com/embed/playlist/1VOREp7qG3Jen3Mpgdus41" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
             spotifyMainContainer.append(iFrameDiv);
-            document.body.style.backgroundImage = "url(./Images/josh-wilburne-6qtdLAQXmgs-unsplash.jpg";
+            document.body.style.backgroundImage = "url(./Images/josh-wilburne-6qtdLAQXmgs-unsplash.jpg)";
 
         // No weather at all?
         } else {
