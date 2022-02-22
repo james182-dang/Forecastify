@@ -17,3 +17,10 @@ Just input the city you're in, and Forecastify will pull a relevant playlist fro
 Let mother nature put some pep in your step with Forecastify.
 
 Forecastify uses Tailwind, Spotify and Openweather API, and moment.js to match the mood.
+
+Technologies used:
+* Tailwind
+* Spotify API
+* Openweather APO
+* Moment.js
+* CSS
